@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="myInput" id="myInput" value="" />
+		<div id="myDiv" style="width: 500px;height: 500px;border: 1px solid;"></div>
+	</body>
+	<script type="text/javascript">
+		var myIn=document.getElementById("myInput");
+		var myDiv=document.getElementById("myDiv");
+//		myIn.onfocus=function(){
+//			alert("得到");
+//		}
+//		myIn.onblur=function(){
+//			alert("失去");
+//		}
+		
+//		myDiv.onclick=function(e){
+//			//参数e谷歌火狐IE9以上高版本
+//			//window.event,  ie9以下版本支持，谷歌
+//			var ev=e||window.event;
+//			//ev.srcElement ie支持
+//			//ev.target谷歌火狐ie高版本支持
+//			alert(ev.srcElement||ev.target);
+//			
+//		}
+		
+		document.onkeydown=function(e){
+			var ev=e||window.event;
+			var myValue=myIn.value;
+			if(ev.keyCode==13){
+				myDiv.innerHTML+="<li>"+myValue+"</li>";
+				myIn.value="";
+			}
+		}
+		
+	</script>
+</html>

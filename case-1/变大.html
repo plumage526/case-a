@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			button{
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="display:inline-block;width: 50px;height: 50px;background: red;" id="myDiv">
+			
+		</div>
+		<button>变大</button>
+		<button>变小</button>
+	</body>
+	<script type="text/javascript">
+		var oDiv=document.getElementById("myDiv");
+		var oBtn=document.getElementsByTagName("button")[0];
+		var oBtn2=document.getElementsByTagName("button")[1];
+		oBtn.onclick=function(){
+			if(parseFloat(oDiv.style.width)>200){
+				alert("不能再大了");
+			}else{
+				oDiv.style.width = parseFloat(oDiv.style.width)+10+"px";
+				oDiv.style.height = parseFloat(oDiv.style.height)+10+"px";
+			}
+		}
+		
+		oBtn2.onclick=function(){
+			if(parseFloat(oDiv.style.width)<20){
+				alert("不能再小了");
+			}else{
+				oDiv.style.width = parseFloat(oDiv.style.width)-10+"px";
+				oDiv.style.height = parseFloat(oDiv.style.height)-10+"px";
+			}
+		
+		}
+		
+	</script>
+</html>

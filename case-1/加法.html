@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" />+
+		<input type="text" />
+		<button>得</button>
+	</body>
+	<script type="text/javascript">
+//		var a=1;
+//		var b=true;
+//		console.log(a==b);
+
+//		String();
+//      toString();
+//		parseInt();
+//		parseFloat();
+//		Number();
+//		Boolean();
+		
+//		var a=1223;
+//		var b=a.toString();
+//		var c=String(a);
+//		
+//		var d=String(null);
+//		
+//		console.log(d);
+		
+//		var a="23424.343sdfsdf";
+//		console.log(parseFloat(a));
+//		var a = "";
+//		console.log(Boolean(a));
+//		console.log(isNaN(NaN));
+		var oInput1=document.getElementsByTagName("input")[0];
+		var oInput2=document.getElementsByTagName("input")[1];
+		var oBtn=document.getElementsByTagName("button")[0];
+		
+	
+		oBtn.onclick=function(){
+			var a=Number(oInput1.value);
+			var b=Number(oInput2.value);
+			if(isNaN(a)){
+				alert("第一个数字有误！")
+				return;
+			}
+			else if(isNaN(b)){
+				alert("第二个数字有误！")
+				return;
+			}
+			
+			alert(a+b);
+		}
+		
+	</script>
+</html>

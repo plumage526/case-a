@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li{
+				list-style: none;
+			}
+			div{
+				width: 1000px;
+				height: 200px;
+				border: 1px solid;
+				margin: 30px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			img{
+				width: 200px;
+				height: 200px;
+			}
+			ul{
+				height: 200px;
+				position: absolute;
+				left: 0;
+			}
+			li{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="oDiv">
+			<ul id="oUl">
+				<li><img src="image/1.jpg"/></li>
+				<li><img src="image/2.jpg"/></li>
+				<li><img src="image/3.jpg"/></li>
+				<li><img src="image/4.jpg"/></li>
+				<li><img src="image/5.jpg"/></li>
+			</ul>
+		</div>
+		<button>向左</button><button>向右</button>
+	</body>
+	<script type="text/javascript">
+		var oUl=document.getElementById("oUl");
+		var oLBtn=document.getElementsByTagName("button")[0];
+		var oRBtn=document.getElementsByTagName("button")[1];
+		oUl.innerHTML+=oUl.innerHTML;
+		oUl.style.width=oUl.offsetWidth*2+"px";
+		var speed=-5;
+		function move(){
+            oUl.style.left=oUl.offsetLeft+speed+"px";
+			if(oUl.offsetLeft<-oUl.offsetWidth/2){
+				oUl.style.left = "0px";
+			}
+			if(oUl.offsetLeft>0){
+				oUl.style.left = -oUl.offsetWidth/2+"px";
+			}
+		}
+		var timer=setInterval(move,30);
+		oLBtn.onclick=function(){
+			speed=-5;
+		}
+		oRBtn.onclick=function(){
+			speed=5;
+		}
+		
+		oUl.onmouseover=function(){
+			clearInterval(timer);
+		}
+		
+		oUl.onmouseout=function(){
+			timer=setInterval(move,30);
+		}
+	</script>
+</html>

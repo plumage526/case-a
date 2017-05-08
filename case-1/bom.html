@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="height: 1000px;">
+		<button id="btn">打开</button>
+	</body>
+	<script type="text/javascript">
+		var oBtn=document.getElementById("btn");
+		oBtn.onclick=function(){
+			window.open("close.html");
+			console.log(this);
+		}
+		window.onscroll=function(){
+			var myScroll=document.body.scrollTop||document.documentElement.scrollTop;
+			console.log(myScroll);
+		}
+//		window.setInterval(function(){
+////			console.log(this);
+//		},1000);
+//		var a=confirm();
+//		console.log(a);
+//		var b=prompt();
+//		console.log(b);
+//		
+	</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#myDiv {
+				background-image: url(img/QQ图片20161116094701.jpg);
+				background-size: 500px 500px;
+				background-position: 85px 55px;
+			}
+			
+			body {
+				background: black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="width: 50px;height: 50px;position: absolute;" id="myDiv">
+
+		</div>
+	</body>
+	<script type="text/javascript">
+		var myDiv = document.getElementById("myDiv");
+		document.onkeydown = function(e) {
+			if(e.keyCode == 38) {
+				myDiv.style.backgroundPosition = "88px 55px";
+				myDiv.style.top = myDiv.offsetTop - 5 + "px";
+
+			}
+			if(e.keyCode == 40) {
+				myDiv.style.backgroundPosition = "87px -72px";
+				myDiv.style.top = myDiv.offsetTop + 5 + "px";
+			}
+			if(e.keyCode == 37) {
+				myDiv.style.backgroundPosition = "-412px -200px";
+				myDiv.style.left = myDiv.offsetLeft - 5 + "px";
+			}
+			if(e.keyCode == 39) {
+				myDiv.style.backgroundPosition = "-412px -322px";
+				myDiv.style.left = myDiv.offsetLeft + 5 + "px";
+			}
+		}
+
+		function addDrag(obj) {
+			obj.onmousedown = function(e) {
+				//初始div的坐标
+				var startX = obj.offsetLeft;
+				var startY = obj.offsetTop;
+				//鼠标点击位置的坐标
+				var clickX = e.pageX;
+				var clickY = e.pageY;
+				document.onmousemove = function(e) {
+					//鼠标移动到的坐标减去鼠标点击时的坐标等于鼠标移动的距离
+					var moveX = e.pageX - clickX;
+					var moveY = e.pageY - clickY;
+
+					//将所操作div的初始位置加上鼠标移动的距离
+					obj.style.top = startY + moveY + "px";
+					obj.style.left = startX + moveX + "px";
+				}
+			}
+			document.onmouseup = function() {
+				//当鼠标松开时，把移动时间清空
+				document.onmousemove = null;
+			}
+		}
+		addDrag(myDiv);
+	</script>
+
+</html>

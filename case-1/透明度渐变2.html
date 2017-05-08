@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 200px;
+				height: 200px;
+				background: blue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="opacity: 0;" id="oDiv">
+
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oDiv = document.getElementById("oDiv");
+		var timer = null;
+		var speed = 0;
+
+		function change(end) {
+			clearInterval(timer);
+			if(end > 0) {
+				speed = 0.01;
+			} else {
+				speed = -0.01;
+			}
+			timer = setInterval(function() {
+				console.log(oDiv.style.opacity);
+				if(parseFloat(oDiv.style.opacity) == end) {
+					clearInterval(timer);
+				} else {
+					oDiv.style.opacity = parseFloat(oDiv.style.opacity) + speed;
+				}
+			}, 30);
+
+		}
+
+//		function change2() {
+//			console.log(oDiv.style.opacity);
+//			if(parseFloat(oDiv.style.opacity) == 0) {
+//				clearInterval(timer);
+//			} else {
+//				oDiv.style.opacity = parseFloat(oDiv.style.opacity) - 0.01;
+//			}
+//		}
+
+		oDiv.onmouseover = function() {
+//			clearInterval(timer);
+//			timer = setInterval(change, 30);
+			change(1);
+		}
+
+		oDiv.onmouseout = function() {
+//			clearInterval(timer);
+//			timer = setInterval(change2, 30);
+			change(0);
+		}
+	</script>
+
+</html>

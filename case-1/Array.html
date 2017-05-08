@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+	<script type="text/javascript">
+		//		var a=new Array(2,3,5,1);
+				var a=[2,3,5,1,[3,3,[3,34,"sdffsdfs"],34]];
+		////		稀疏数组
+		//		a[9]=6;
+		//		a.sdf="sdfsdfsdf";
+		////      多维数组
+		//		console.log(a.constructor);
+		//		
+		//		var b=["胜多负少","三四十"];
+		//		console.log(a.concat(b));
+
+		//		console.log(a.join(""));
+
+		//		a.pop();
+		//		console.log(a);
+		//		console.log(a.pop());
+
+				a.push("对对对","擦擦擦");
+				console.log(a);
+
+		//		a[a.length]="对对对";
+		//		console.log(a);
+		//		a.reverse();
+		//		console.log(a);
+
+		//		console.log(a.sort(
+		//			function(a,b){
+		//				if(a>b){
+		//					return 13;
+		//				}
+		//				else if(a==b){
+		//					return 0;
+		//				}
+		//				else{
+		//					return -123;
+		//				}
+		////				return b-a;
+		//			}
+		//		));
+		//		var b=a.splice(1,2,"省啊啊啊","水电费","啥地方");
+		//		console.log(b);
+		//		var a = [12, 5, 13, 4, 3, 23];
+		//		var c=a.join(",");
+		//		var b=a.toLocaleString();
+		//		console.log(b);
+		//		console.log(c);
+		//		var b=a.unshift("aaa");
+		//		console.log(a);
+		//		console.log(a.indexOf("sdfsf"));
+
+		//		for(var i=0;i<a.length;i++){
+		//			console.log(a[i]);
+		//		}
+
+		//		a.forEach(function(value,index,b){
+		//			b[index]=value+2;
+		//		});
+		//		console.log(a);
+		//		var b=a.map(function(item){
+		//			return item*2;
+		//		});
+		//		console.log(b);
+
+		//		var b=a.filter(function(item){
+		//			return item%2==1;
+		//		});
+		//		
+		//		console.log(b);
+
+		//		var b=a.every(function(item){
+		//			return item>=3;
+		//		});
+		//		console.log(b);
+
+		//		var b=a.some(function(item){
+		//			return item>=90;
+		//		});
+		//		console.log(b);
+
+		//		var b=a.reduce(function(x,y){
+		//			return x-y;
+		//		},100);
+		//		console.log(b);
+
+		//		function extend(o, p) {
+		//			for(var attr in p) {
+		//				o[attr] = p[attr];
+		//			}
+		//			return o;
+		//		}
+		//
+		//		function union(o, p) {
+		//			return extend((extend({}, o)), p);
+		//		}
+		//		
+		//		var aaa=[{x:2},{y:3},{z:3},{w:343}];
+		//		
+		//		var bbb=aaa.reduce(union);
+		//		console.log(bbb);
+		//		console.log(aaa);
+
+		var a = [2, 3, 2, 5, 5, 6, 7, 5, 9];
+
+		//		var b=[];
+		//		for(i=0;i<a.length;i++){
+		//			if(b.indexOf(a[i])==-1){
+		//				b.push(a[i]);
+		//			}
+		//		}
+		//		console.log(b);
+		
+		//封装一个去重方法：
+		function distinct(arr) {
+			var b = [];
+			for(i = 0; i < arr.length; i++) {
+				if(b.indexOf(arr[i]) == -1) {
+					b.push(arr[i]);
+				}
+			}
+			return b;
+		}
+		var cc = distinct(a);
+		console.log(cc);
+		//把方法加到原型里：
+		Array.prototype._distinct = function() {
+			var b = [];
+			for(i = 0; i < this.length; i++) {
+				if(b.indexOf(this[i]) == -1) {
+					b.push(this[i]);
+				}
+			}
+			return b;
+		}
+		var ddd=a._distinct();
+		console.log(ddd);
+	</script>
+
+</html>

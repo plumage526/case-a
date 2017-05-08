@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			div {
+				width: 100px;
+				height: 100px;
+				float: left;
+				border: 1px solid 0;
+				border-radius: 50px;
+				text-align: center;
+				line-height: 100px;
+			}
+			
+			#heart {
+				position: relative;
+				width: 100px;
+				height: 90px;
+				
+			}
+			
+			#heart:before,
+			#heart:after {
+				position: absolute;
+				content: "";
+				left: 50px;
+				top: 0;
+				width: 50px;
+				height: 80px;
+				background: red;
+				-moz-border-radius: 50px 50px 0 0;
+				border-radius: 50px 50px 0 0;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+				-webkit-transform-origin: 0 100%;
+				-moz-transform-origin: 0 100%;
+				-ms-transform-origin: 0 100%;
+				-o-transform-origin: 0 100%;
+				transform-origin: 0 100%;
+			}
+			
+			#heart:after {
+				left: 0;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				transform: rotate(45deg);
+				-webkit-transform-origin: 100% 100%;
+				-moz-transform-origin: 100% 100%;
+				-ms-transform-origin: 100% 100%;
+				-o-transform-origin: 100% 100%;
+				transform-origin: 100% 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div >
+			<div id="heart">
+			</div>
+
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		var aDiv = document.getElementsByTagName('div');
+		var oBody = document.getElementsByTagName("body")[0];
+		for(var i = 0; i < 7; i++) {
+			oBody.innerHTML += oBody.innerHTML;
+		}
+
+		function getColor() {
+			return "#" + Math.floor(Math.random() * Math.pow(16, 6)).toString(16, 6);
+		}
+
+		function setColor(odj) {
+			odj.style.background = getColor();
+		}
+		setEreycolor();
+
+		function setEreycolor() {
+
+			for(var i = 0; i < aDiv.length; i++) {
+				setColor(aDiv[i]);
+			}
+		}
+		setInterval(setEreycolor, 100)
+	</script>
+
+</html>

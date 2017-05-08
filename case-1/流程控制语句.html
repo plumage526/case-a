@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 400px;
+				height: 400px;
+				background: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<button>隐藏/显示</button>
+		<div style="display: block;">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oBtn=document.getElementsByTagName("button")[0];
+		var oDiv=document.getElementsByTagName("div")[0];
+		oBtn.onclick=function(){
+			if(oDiv.style.display=="block"){
+				oDiv.style.display="none"
+			}
+			else{
+				oDiv.style.display="block"
+			}
+		}
+		
+	</script>
+</html>

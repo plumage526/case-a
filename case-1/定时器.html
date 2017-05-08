@@ -1,0 +1,261 @@
+<!--<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#aaa{
+				width: 100px;
+				height: 100px;
+				background: blueviolet;
+				float: left;
+			}
+			#bbb{
+				height: 300px;
+				width: 300px;
+				background: gold;
+				float: left;
+				margin-left: 50px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="aaa">
+			
+		</div>
+		<div id="bbb">
+			
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+//		setInterval();
+//		setTimeout();
+//		var a=1;
+//		
+//		function bb(v){
+//			console.log(a);
+//			a+=v;
+//			if(a>=10){
+//				clearInterval(timer);
+//			}
+//		}
+//	
+//		var timer=setInterval("bb(3)",1);
+		//		setTimeout("bb(3)",3000);
+		var timer=null;
+		var aAa=document.getElementById("aaa");
+		var bBb=document.getElementById("bbb");
+		
+		aAa.onmouseover=bBb.onmouseover=function(){
+			clearTimeout(timer);
+			bBb.style.display="block";
+		}
+		
+	aAa.onmouseout=bBb.onmouseout=function(){
+			timer=setTimeout("bBb.style.display='none'",2000);
+		}
+		
+//		oDetail.onmouseover=function(){
+//			clearTimeout(timer);
+//			oDetail.style.display="block";
+//		}
+		
+//		oDetail.onmouseout=function(){
+//			timer=setTimeout("oDetail.style.display='none'",2000);
+//		}
+	</script>
+</html>-->
+<!--<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>定时器</title>
+	<style type="text/css">
+		div{
+	        width: 100px;
+	        height: 200px;
+	        background: darkcyan;
+		}
+		#bbb{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="aaa">
+		
+	</div>
+	<div id="bbb">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	var timer=null;
+	var aAa=document.getElementById("aaa");
+	var bBb=document.getElementById("bbb");
+	aAa.onmouseover=bBb.onmouseover=function(){
+		clearInterval(timer);
+		bBb.style.display="block";
+	}
+		aAa.onmouseout=bBb.onmouseout=function(){
+		timer=setTimeout("bBb.style.display='none'",2000);
+	}
+</script>
+</html>-->
+<!--<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 100px;
+			background: firebrick;
+			border: 3px dotted aquamarine;
+			border-radius:30% ;
+		}
+		#bbb{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="aaa">
+		
+	</div>
+	<div id="bbb">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	var timer=null;
+	var aAa=document.getElementById("aaa");
+	var bBb=document.getElementById("bbb");
+	aAa.onmouseover=bBb.onmouseover=function(){
+		clearInterval(timer);
+		bBb.style.display="block";
+	}
+	aAa.onmouseout=bBb.onmouseout=function(){
+		timer=setTimeout("bBb.style.display='none'",2000);
+	}
+</script>
+</html>-->
+<!--<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>定时器</title>
+	<style type="text/css">
+	div{
+		width:100px ;
+		height: 100px;
+		background: fuchsia;
+	}	
+	#蹦蹦蹦{
+		display: none;
+	}
+	</style>
+	
+</head>
+<body>
+	<div id="啊啊啊">
+		
+	</div>
+	
+	<div id="蹦蹦蹦">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	var 啊啊啊=document.getElementById("啊啊啊");
+	var 蹦蹦蹦=document.getElementById("蹦蹦蹦");
+	var timer=null;
+	啊啊啊.onmouseover=蹦蹦蹦.onmouseover=function(){
+		clearInterval(timer);
+		蹦蹦蹦.style.display="block";
+	}
+	啊啊啊.onmouseout=蹦蹦蹦.onmouseout=function(){
+		timer=setTimeout("蹦蹦蹦.style.display='none'",2000);
+	}
+</script>
+</html>-->
+<!--<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>定时器</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+           background: #ADFF2F;
+           float: left;
+           margin-left: 100px;
+		}
+		#asd{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="qwe">
+		
+	</div>
+	<div id="asd">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	var timer=null;
+	var aaa=document.getElementById("qwe");
+	var bbb=document.getElementById("asd");
+	qwe.onmouseover=asd.onmouseover=function(){
+		clearInterval(timer);
+		bbb.style.display="block";
+	}
+		qwe.onmouseout=asd.onmouseout=function(){
+		timer=setTimeout("bbb.style.display='none'",2000);
+	}
+</script>
+</html>-->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>定时器</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: silver;
+		}
+		#bbb{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="aaa">
+		
+	</div>
+	<div id="bbb">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	var timer=null;
+	var aaa=document.getElementById("aaa");
+	var bbb=document.getElementById("bbb");
+	aaa.onmouseover=bbb.onmouseover=function(){
+		clearInterval(timer);
+		bbb.style.display='block';
+	}
+	aaa.onmouseout=bbb.onmouseout=function(){
+		timer=setTimeout("bbb.style.display='none'",2000);
+	}
+	
+</script>
+</html>

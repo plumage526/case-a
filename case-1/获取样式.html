@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#myDiv {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="myDiv">
+
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oDiv = document.getElementById("myDiv");
+		////		var _width=oDiv.currentStyle.width; //ie兼容
+		//		var _width=getComputedStyle(oDiv)["width"];  //谷歌，火狐，ie9以上兼容
+		console.log(oDiv);
+
+		function getStyle(obj, attr) {
+			if(obj.currentStyle) {
+				return obj.currentStyle[attr];
+			} else {
+				return getComputedStyle(obj)[attr];
+			}
+
+		}
+
+		var _width = getStyle(oDiv, "background-color");
+		//		alert(_width);
+
+		//		var a=33;
+
+		//		var a = function() {
+		//			alert(343);
+		//		}
+		//
+		//		function a() {
+		//			alert(343434);
+		//		}
+		//		console.log(a);
+
+		//		var v = 'Hello World';
+		//		(function() {
+		//			alert(v);
+		//			var v = 'I love you';
+		//		})();
+
+		//		(function() {
+		//			var a = 3434;
+		//			console.log(a);
+		//		})();
+
+		function foo() {
+			var x = 1;
+			if(x) {
+				(function() {
+					var x = 2;
+					// some other code 
+				}());
+			}
+			// x is still 1. 
+			console.log(x);
+		}
+
+		var v = 'Hello World';
+		(function() {
+			var v;
+			alert(v);
+			v = 'I love you';
+		})()
+	</script>
+
+</html>

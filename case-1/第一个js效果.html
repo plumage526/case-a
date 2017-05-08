@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: yellow;
+				color: red;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="checkbox" name="" id="myInput" value="" />
+		<div id="myDiv">
+			你不能乱点这里
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oInput=document.getElementById("myInput");
+		var oDiv=document.getElementById("myDiv");
+		
+		oInput.onmouseover=function(){
+			oDiv.style.display="block";
+		}
+			oInput.onmouseout=function(){
+			oDiv.style.display="none";
+		}
+	</script>
+</html>

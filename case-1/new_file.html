@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link id="myLink" rel="stylesheet" type="text/css" href="css/c1.css"/>
+		<style type="text/css">
+			.div1{
+				width: 500px;
+				height: 500px;
+				background: gray;
+			}
+			.div2{
+				width: 200px;
+				height: 200px;
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<button>gray</button>
+		<button>yellow</button>
+		<div id="myDiv" class="div1">
+			
+		</div>	
+	</body>
+	<script type="text/javascript">
+		var myDiv=document.getElementById("myDiv");
+		var oBtn1=document.getElementsByTagName("button")[0];
+		var oBtn2=document.getElementsByTagName("button")[1];
+		var oLink=document.getElementById("myLink");
+//		oBtn1.onclick=function(){
+//			myDiv.style.left=0;
+//		}
+//		
+//		oBtn2.onclick=function(){
+//			myDiv.style.left="500px";
+//		}
+//		console.log(myDiv);
+//		var a=123123;
+//		console.log(typeof typeof a)
+		
+//		var a=-22/0;
+//		console.log(a);
+//		console.log(myDiv.className);
+		oBtn1.onclick=function(){
+//			oLink.href="css/c1.css";
+			myDiv.className="div1";
+			
+		}
+		oBtn2.onclick=function(){
+//			oLink.href="css/c2.css";
+			myDiv.className="div2";
+		}
+		
+		var aoteman={
+			"name":"奥特曼",
+			"age":"20",
+			"sex":"male",
+			"hobby":"打怪兽"
+		}
+//		aoteman.age=50;
+//		console.log(aoteman.name);
+//		console.log(aoteman["age"]);
+//		
+	delete aoteman.name;
+		console.log(aoteman.name);
+//		
+//		var a=1;
+//		b=++a;
+//		alert(b);
+		//++放前面先运算后赋值，放后面，先赋值后运算！
+		
+//		console.log(0.4-0.3);
+		
+//		console.log((Infinity)+(-Infinity));
+			
+	</script>
+	
+	
+</html>

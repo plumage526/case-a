@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="myDiv">
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+		</div>
+
+		<input type="button" name="" id="btn" value="全选" />
+		<input type="button" name="" id="btn2" value="全不选" />
+		<input type="button" name="" id="btn3" value="反选" />
+		<input type="checkbox" name="" id="btn4" value="" />
+	</body>
+	<script type="text/javascript">
+		var oDiv = document.getElementById("myDiv");
+		var aInput = oDiv.getElementsByTagName("input");
+		var oBtn = document.getElementById("btn");
+		var oBtn2 = document.getElementById("btn2");
+		var oBtn3 = document.getElementById("btn3");
+		var oBtn4 = document.getElementById("btn4");
+		oBtn.onclick = function() {
+			for(var i = 0; i < aInput.length; i++) {
+				aInput[i].checked = true;
+			}
+		}
+		oBtn2.onclick = function() {
+			for(var i = 0; i < aInput.length; i++) {
+				aInput[i].checked = false;
+			}
+		}
+		oBtn3.onclick = function() {
+			for(var i = 0; i < aInput.length; i++) {
+				if(aInput[i].checked == false) {
+					aInput[i].checked = true;
+				} else {
+					aInput[i].checked = false;
+				}
+			}
+		}
+		oBtn4.onclick=function(){
+		     for(var i = 0; i < aInput.length; i++){
+		     	if(oBtn4.checked){
+		     		aInput[i].checked = true;
+		     	}
+		     	else{
+		     		aInput[i].checked = false;
+		     	}
+		     }
+		}
+	</script>
+
+</html>

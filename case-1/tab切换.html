@@ -1,0 +1,172 @@
+<!--<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 400px;
+				height: 500px;
+				background: gray;
+			}
+			
+			button {
+				width: 94px;
+				height: 40px;
+				border: none;
+				border-radius: 20px;
+				outline: none;
+			}
+			
+			button.active {
+				background: pink;
+			}
+			
+			div {
+				display: none;
+			}
+			
+			div.active {
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button class="active">1</button>
+		<button>2</button>
+		<button>3</button>
+		<button>4</button>
+		<div style="background: red;" class="active">1</div>
+		<div style="background: yellow;">2</div>
+		<div style="background: blueviolet;">3</div>
+		<div style="background: greenyellow;">4</div>
+	</body>
+	<script type="text/javascript">
+		var aBtn = document.getElementsByTagName("button");
+		var aDiv = document.getElementsByTagName("div");
+		//		for(var i = 0; i < aBtn.length; i++) {
+		//			aBtn[i].index=i;
+		//			aBtn[i].onclick = function() {
+		//				for(var j = 0; j < aBtn.length; j++) {
+		//					aBtn[j].className = "";
+		//					aDiv[j].className = "";
+		//				}
+		//				this.className = "active";
+		//				aDiv[this.index].className="active";
+		//			}
+		//			
+		//		}
+		for(var i = 0; i < aBtn.length; i++) {
+			aBtn[i].index=i;
+			aBtn[i].onclick = function() {
+				for(var j = 0; j < aBtn.length; j++) {
+					aBtn[j].className = "";
+					aDiv[j].className = "";
+				}
+				this.className = "active";
+				aDiv[this.index].className = "active";
+			}
+		}
+		//		aBtn[0].onclick = function() {
+		//			for(var j = 0; j < aBtn.length; j++) {
+		//				aBtn[j].className = "";
+		//				aDiv[j].className = "";
+		//			}
+		//			aBtn[0].className = "active";
+		//			aDiv[0].className = "active";
+		//		}
+		//		aBtn[1].onclick = function() {
+		//			for(var j = 0; j < aBtn.length; j++) {
+		//				aBtn[j].className = "";
+		//				aDiv[j].className = "";
+		//			}
+		//			aBtn[1].className = "active";
+		//			aDiv[1].className = "active";
+		//		}
+		//		aBtn[2].onclick = function() {
+		//			for(var j = 0; j < aBtn.length; j++) {
+		//				aBtn[j].className = "";
+		//				aDiv[j].className = "";
+		//			}
+		//			aBtn[2].className = "active";
+		//			aDiv[2].className = "active";
+		//		}
+		//		aBtn[3].onclick = function() {
+		//			for(var j = 0; j < aBtn.length; j++) {
+		//				aBtn[j].className = "";
+		//				aDiv[j].className = "";
+		//			}
+		//			aBtn[3].className = "active";
+		//			aDiv[3].className = "active";
+		//		}
+	</script>
+
+</html>-->
+	<!doctype html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>tab切换</title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #000;
+			text-align: center;
+		}
+			div{
+				width: 300px;
+				height: 200px;
+				background: darkcyan;
+				display: none;
+				margin-top: 50px;
+				line-height: 200px;
+				font-size: 60px;
+				font-weight: bold;
+			
+			}
+			li{
+				text-align: center;
+				float: left;
+				width: 30px;
+				height: 20px;
+				background: sandybrown;
+				list-style: none;
+				margin-left: 10px;
+				border-radius: 30%;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<div id="oDiv">1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+	</body>
+	<script type="text/javascript">
+		var aLi=document.getElementsByTagName("li");
+		var aDiv=document.getElementsByTagName("div");
+		for(var i=0;i<aLi.length;i++){
+			(function(i){
+				aLi[i].onclick=function(){
+					for(var j=0;j<aDiv.length;j++){
+						aDiv[j].style.display="none";
+					}
+					aDiv[i].style.display="block";
+					aDiv[i].style.background="#ADFF2F"
+				}
+			})(i);
+		}
+	</script>
+	</html>
+	

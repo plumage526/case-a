@@ -1,0 +1,137 @@
+<!--<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		div {
+			width: 200px;
+			height: 400px;
+			background: blueviolet;
+			position: absolute;
+			left: -200px;
+		}
+		
+		span {
+			display: inline-block;
+			width: 20px;
+			height: 50px;
+			background: yellow;
+			position: absolute;
+			top: 175px;
+			left: 200px;
+		}
+	</style>
+
+	<body>
+		<div id="oDiv">
+			<span>分享栏</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oDiv = document.getElementById("oDiv");
+		var timer = null;
+		var speed = 0;
+
+		function move(end) {
+			clearInterval(timer);
+			timer = setInterval(function() {
+				if(end >= 0) {
+					speed = +4;
+				} else {
+					speed = -4;
+				}
+				if(oDiv.offsetLeft == end) {
+					clearInterval(timer);
+				} else {
+					oDiv.style.left = oDiv.offsetLeft + speed + "px";
+				}
+			}, 30);
+
+		}
+
+		//		function move2(){
+		//			if(oDiv.offsetLeft<=-200){
+		//				clearInterval(timer);
+		//			}
+		//			else{
+		//				oDiv.style.left=oDiv.offsetLeft-2+"px";
+		//			}
+		//		}
+
+		oDiv.onmouseover = function() {
+			//			clearInterval(timer);
+			//			timer=setInterval("move(0)",30);
+			move(0);
+		}
+		oDiv.onmouseout = function() {
+			//			clearInterval(timer);
+			//			timer=setInterval("move(-200)",30);
+			move(-200);
+		}
+	</script>
+
+</html>-->
+	<!doctype html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>分享栏</title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 300px;
+				position: absolute;
+				left: -200px;
+				top: 0;
+				background: salmon;
+			}
+			span{
+				background: darkcyan;
+				position: absolute;
+				top: 50px;
+			    left:205px ;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="oDiv">
+			<span>分<br />享</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oDiv=document.getElementById("oDiv");
+		timer=null;
+		speed=0;
+		function move(end){
+			clearInterval(timer);
+			timer=setInterval(function(){
+				if(end>=0){
+				speed=+4;
+			}else{
+				speed=-4;
+			}
+			if(oDiv.offsetLeft==end){
+				clearInterval(timer);
+			}else{
+				oDiv.style.left=oDiv.offsetLeft+speed+"px"
+			}
+			},30);
+			
+		}
+		oDiv.onmouseover=function(){
+			clearInterval(timer);
+			move(0);
+		}
+		oDiv.onmouseout=function(){
+			move(-200)
+		}
+	</script>
+	</html>

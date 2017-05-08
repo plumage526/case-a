@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				background: black;
+				color: white;
+				text-align: center;
+				font-size: 70px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<img src="img/0.png" alt="" />
+		<img src="img/0.png" alt="" />:
+		<img src="img/0.png" alt="" />
+		<img src="img/0.png" alt="" />:
+		<img src="img/0.png" alt="" />
+		<img src="img/0.png" alt="" />
+		<div class="stopWatchBtn">
+			<button id="btn1">计时</button>
+			<button id="btn2">暂停</button>
+			<button id="btn3">开始</button>
+		</div>
+
+		<button id="btn4">时钟</button>
+		<div>
+			<button id="reset">清零</button>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		function Clock(){
+			
+		}
+		var aImg = document.getElementsByTagName("img");
+
+		var btn1 = document.getElementById("btn1");
+		var btn2 = document.getElementById("btn4");
+
+		var stopBtn = document.getElementById("btn2");
+		var startBtn = document.getElementById("btn3");
+		var resetBtn = document.getElementById("reset");
+
+		var seconds = 0;
+		var minutes = 0;
+		var hours = 0;
+
+		var timer1 = null;
+		var timer2 = null;
+		var str = "";
+		
+		var flag=false;//三个大功能的判断
+		
+		var flag2=false;//开始暂停标记
+
+		function setDom() {
+			for(var i = 0; i < aImg.length; i++) {
+				aImg[i].src = "img/" + str[i] + ".png";
+			}
+		}
+
+		function stopWatch() {
+			if(seconds == 60){
+				minutes += 1;
+				seconds = 0;
+			}
+			if(minutes == 60) {
+				hours += 1;
+				minutes = 0;
+			}
+			str = doTime(hours) + doTime(minutes) + doTime(seconds);
+			setDom();
+			seconds += 1;
+			//			console.log(str);
+		}
+
+		function doTime(n) {
+			if(n < 10) {
+				return "" + 0 + n;
+			} else {
+				return "" + n;
+			}
+		}
+
+		function clockFuc() {
+			var time = new Date();
+			str = doTime(time.getHours()) + doTime(time.getMinutes()) + doTime(time.getSeconds());
+
+			setDom();
+		}
+		//创建data对象
+		//获取时分秒
+		//按照6位数格式拼接字符串
+		//按照字符串设置src
+		btn1.onclick = function() {
+			flag=true;
+			flag2=false;
+			clearInterval(timer2);
+			clearInterval(timer1);
+			timer2 = null;
+			seconds = 0;
+			minutes = 0;
+			hours = 0;
+			stopWatch();
+			timer1 = setInterval(stopWatch, 1000);
+		}
+		btn2.onclick = function() {
+			flag=false;
+			flag2=false;
+			if(!timer2) { //预防连续点击时钟出现停顿bug
+				clearInterval(timer2);
+				clearInterval(timer1);
+				timer2 = setInterval(clockFuc, 1000);
+			}
+
+		}
+
+		stopBtn.onclick = function() {
+			flag2=true;
+			if(flag){
+				clearInterval(timer2);
+				clearInterval(timer1);
+				timer2 = null;
+			}
+		
+		}
+
+		startBtn.onclick = function() {
+			if(flag&&flag2){
+				flag2=false;
+				clearInterval(timer2);
+				clearInterval(timer1);
+				timer2 = null;
+				stopWatch();
+				timer1 = setInterval(stopWatch, 1000);
+			}
+		
+		}
+
+		resetBtn.onclick = function() {
+			flag=false;
+			flag2=false;
+			clearInterval(timer2);
+			clearInterval(timer1);
+			timer2 = null;
+			seconds = 0;
+			minutes = 0;
+			hours = 0;
+			stopWatch();
+		}
+	</script>
+
+</html>

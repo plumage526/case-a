@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="myDiv">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+//		function sum(){
+//			var result=0;
+//			console.log(arguments[0]);
+//			for(var i=0;i<arguments.length;i++){
+//				result+=arguments[i];
+//			}
+//			console.log(arguments.callee);
+//			return result;
+//			
+//			
+//		}
+//		var s=sum(1,2,3,235,234,23,3,342,2342);
+		var oDiv=document.getElementById("myDiv");
+		var css=function(obj,attr,value){
+			obj.style[attr]=value;
+		}
+		css(oDiv,"width","200px");
+		css(oDiv,"height","200px");
+		css(oDiv,"background","red");
+		css(oDiv,"position","absolute");
+		css(oDiv,"left","200px");
+		css(oDiv,"opacity","0.5");
+		css(oDiv,"border","3px solid blue");
+		
+//		var bb=111;
+//		function func(){
+//			var cc=222;
+//			function dd(){
+//				var ddd=333;
+//				console.log(cc);
+//			}
+//			dd();
+//		}
+//		func();
+		var a={
+			y:3,
+			z:5,
+		}
+		var b={
+			name:23,
+			age:32,
+			x:3
+		}
+		function extend(o,p){
+			for (var attr in p){
+				o[attr]=p[attr];
+			}
+			return o;
+		}
+		console.log(extend(a,b));
+		
+		
+		function union(o,p){
+			return extend((extend({},o)),p);
+		}
+//		console.log(union(a,b));
+	</script>
+</html>

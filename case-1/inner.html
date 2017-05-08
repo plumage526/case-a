@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="" name="" id="" value="" />
+		<button>放入字符串</button>
+		<button>放入节点</button>
+		<div style="height: 200px; width: 200px; border: 1px solid;" id="myDiv">
+				
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oDiv=document.getElementById("myDiv");
+		var oInput=document.getElementsByTagName("input")[0];
+		var oBtn=document.getElementsByTagName("button")[0];
+		var oBtn2=document.getElementsByTagName("button")[1];
+		var str="sdfsdfsdfsdf"
+		console.log(str);
+		
+		oBtn.onclick=function(){
+			var sV=oInput.value;
+			oDiv.innerText+=sV;
+		}
+		
+		oBtn2.onclick=function(){
+			var sV=oInput.value;
+			oDiv.innerHTML+=sV;
+		}
+		
+//		oDiv.innerHTML="<li></li>"
+	</script>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			li {
+				float: left;
+				width: 50px;
+				height: 50px;
+				background: red;
+				margin-left: 10px;
+				border-radius: 25px;
+				text-align: center;
+				line-height: 50px;
+			}
+			
+			.blue {
+				background: blue;
+			}
+			
+			span {
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				background: white;
+				margin-top: 10px;
+				line-height: 30px;
+				font-weight: 900;
+			}
+			
+			ul {
+				overflow: hidden;
+			}
+			
+			div {
+				padding-left: 150px;
+				padding-top: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li><span>00</span></li>
+			<li><span>00</span></li>
+			<li><span>00</span></li>
+			<li><span>00</span></li>
+			<li><span>00</span></li>
+			<li class="blue"><span>00</span></li>
+			<li class="blue"><span>00</span></li>
+		</ul>
+		<div>
+			<button id="random">机选一注</button>
+			<button id="clear">清空</button>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		(function() {
+			var aSpan = document.getElementsByTagName("span");
+			var oRanBtn = document.getElementById("random");
+			var oClearBtn = document.getElementById("clear");
+			var timer = null;
+
+			function doIt(n) {
+				if(n < 10) {
+					return "" + 0 + n;
+				} else {
+					return "" + n;
+				}
+			}
+
+			function doRandom() {
+				var a = [];
+				clearInterval(timer)
+				while(a.length < 7) {
+					var b = Math.floor(Math.random() * 35) + 1;
+					if(a.indexOf(doIt(b)) == -1) {
+						a.push(doIt(b));
+					}
+				}
+
+				//		for(i=0;i<aSpan.length;i++){
+				//			aSpan[i].innerHTML=a[i];
+				//		}
+				var j = 0;
+				timer = setInterval(function() {
+					if(j == 6) {
+						clearInterval(timer)
+					}
+					aSpan[j].innerHTML = a[j];
+					j++
+				}, 1000);
+				console.log(a);
+			}
+
+			oRanBtn.onclick = function() {
+				oClearBtn.onclick();
+				doRandom();
+			};
+			oClearBtn.onclick = function() {
+				clearInterval(timer);
+				for(var i = 0; i < aSpan.length; i++) {
+					aSpan[i].innerHTML = "00";
+				}
+			}
+
+		})();
+	</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				border: 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="oDiv">
+			
+		</div>
+		<button>变色</button>
+	</body>
+	<script type="text/javascript">
+		var oDiv=document.getElementById("oDiv");
+		var oBtn=document.getElementsByTagName("button")[0];
+//		console.log(Math.round(0.5));
+//		console.log(Math.floor(0.5));
+//		console.log(Math.ceil(0.1));
+//		console.log(Math.pow(2,3));
+		
+//		console.log(Math.floor(Math.random()*3)+7);
+//		console.log(Math.floor(Math.random()*Math.pow(10,4)));
+//		console.log("#"+Math.floor(Math.random()*Math.pow(16,6)).toString(16));
+		function getColor(){
+			return "#"+Math.floor(Math.random()*Math.pow(16,6)).toString(16);
+		}
+		oBtn.onclick=function(){
+			oDiv.style.background=getColor();
+		}
+	</script>
+</html>

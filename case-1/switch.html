@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		姓名<input type="" name="" id="" value="" />
+		性别<input type="" name="" id="" value="" />
+		<button>登陆</button>
+	</body>
+	<script type="text/javascript">
+//		var n=5;
+//		switch(n){
+//			case 1:
+//			alert(1);
+//			break;
+//			case 2:
+//			alert(2);
+//			break;
+//			case 3:
+//			alert(3);
+//			break;
+//			default:
+//			alert("doubushi");
+//		}
+		var oInput1=document.getElementsByTagName("input")[0];
+		var oInput2=document.getElementsByTagName("input")[1];
+		var oBtn=document.getElementsByTagName("button")[0];
+		
+		oBtn.onclick=function(){
+			console.log(this);
+			var _name=oInput1.value;
+			var _sex=oInput2.value;
+			if(!_name){
+				alert("姓名不能为空");
+			}
+			else if(!_sex){
+				alert("性别不能为空");
+			}
+			else{
+				switch(_sex){
+					case "男":
+					alert("欢迎"+_name+"先生");
+					break;
+					case "女":
+					alert("欢迎"+_name+"女士");
+					break;
+					default:
+					alert("您的性别填写有误！");
+				}
+			}
+		}
+		
+		var fanbb={
+			name:"范冰冰",
+			age:"35",
+			sex:"女"
+		}
+		
+//		console.log("oBtn" in window);
+//		for(var attr in fanbb){
+//			console.log(attr);
+//		}
+//		console.log(fanbb);
+//		console.log("2"<14);
+//		var a=3.145593;
+//		console.log(a.toFixed(21));
+//		var b=1<2?10:11
+//		console.log(b);
+//		var a=1;
+//		a+=2;
+//		console.log(a);
+//      var a=1,b=2,c=3;
+//		var a=1;
+//		var b=2;
+//		var c=3;
+//		var i=10;
+//		while(i<10){
+//			i++;
+//		}
+//		console.log(i);
+
+//		do{
+////		console.log(i);
+//			i++;
+//		}
+//		while(i<10);
+//		console.log(i);
+//	for(var attr in window){
+//		console.log(attr);
+//	}
+
+//	var ob=false&&console.log(dfsf);
+//	console.log(ob); 
+	
+	</script>
+</html>

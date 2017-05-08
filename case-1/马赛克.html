@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				float: left;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oBody = document.getElementsByTagName("body")[0];
+				var aDiv = document.getElementsByTagName("div");
+				console.log(oBody);
+				for(var i = 0; i < 6; i++) {
+					oBody.innerHTML += oBody.innerHTML;
+				}
+
+				function getColor() {
+					return "#" + Math.floor(Math.random() * Math.pow(16, 6)).toString(16);
+				}
+
+				function setColor(obj) {
+					obj.style.background = getColor();
+				}
+				function setEveryColor(){
+					for(var i = 0; i < aDiv.length; i++) {
+						setColor(aDiv[i]);
+					}
+				}
+				setEveryColor();
+				setInterval(setEveryColor, 1000);
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="">
+
+		</div>
+	</body>
+
+</html>

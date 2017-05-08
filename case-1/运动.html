@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			div{
+				width: 200px;
+				height: 200px;
+				background: darkcyan;
+				position: absolute;
+			}
+			button{
+				margin-top: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="oDiv">
+			
+		</div>
+		<button>动</button>
+	</body>
+	<script type="text/javascript">
+		var oDiv=document.getElementById("oDiv");
+		var oBtn=document.getElementsByTagName("button")[0];
+		var timer=null;
+		function move(){
+			
+			if(oDiv.offsetLeft>=600){
+				clearInterval(timer);
+			}
+			else{
+				oDiv.style.left=oDiv.offsetLeft+3+"px";
+			}
+		}
+		oBtn.onclick=function(){
+			clearInterval(timer);
+			timer=setInterval(move,30);
+		}
+		//1 设置新的定时器之前要清楚上一个定时器
+		//2 if else 判断达到条件后要禁止执行代码
+	</script>
+</html>

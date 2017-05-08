@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			a{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="out" style="height: 500px;width: 500px;background: darkcyan;"  >
+			<a id="inner" style="height: 200px;width: 200px;background: bisque;" >
+				
+			</a>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var inner=document.getElementById("inner");
+		var out=document.getElementById("out");
+//		inner.onclick=function(e){
+//			alert("里面");
+////			e.stopPropagation(); 取消冒泡
+////			e.preventDefault();  取消默认事件
+//			return false;           //取消默认
+//		}
+//		out.onclick=function(e){
+//			alert("外面");
+//		}
+
+	
+//		out.attachEvent()
+//		out.detachEvent()         ie低版本
+		out.addEventListener("click",aa,false);
+		
+		function aa(){
+			alert("冒泡");
+		};
+		
+		out.addEventListener("click",function(){
+			alert("捕获");
+		},true);
+		
+		out.removeEventListener("click",aa);
+	</script>
+</html>

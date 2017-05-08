@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<textarea name="" rows="10" cols="40"></textarea>
+		<button>解密</button>
+	</body>
+	<script type="text/javascript">
+		var _text=document.getElementsByTagName("textarea")[0];
+		var oBtn=document.getElementsByTagName("button")[0];
+		
+		oBtn.onclick=function(){
+			var _value=_text.value;
+			var _value2=unescape(_value);
+			
+			_text.value=_value2;
+		}
+	</script>
+</html>

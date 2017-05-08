@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li class="oLi"></li>
+			<li class="oLi"></li>
+			<li name="aaaa"></li>
+			<li></li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+//		var aLi=document.getElementsByClassName("oLi");
+		var aaa = document.querySelectorAll("li[name=aaaa]")[0];
+		var oUl=document.getElementsByTagName("ul")[0];
+		var aLi=oUl.children;
+		var oSpan=document.createElement("span");
+		oSpan.setAttribute("class","sfasdfsdf");
+		oSpan.removeAttribute("class");
+		oUl.appendChild(oSpan.cloneNode());
+		
+		oUl.insertBefore(oSpan,aaa)
+//		getByClass(oUl,"oLi");
+		
+		
+		console.log(aaa);
+		console.log(oUl.firstElementChild);
+		oUl.firstElementChild.style.background="green";
+		
+		console.log(aaa.parentElement);
+		aaa.previousElementSibling.style.background="black";
+		
+		function getByClass(ele,_class){
+			var a=[];
+			var aa=ele.getElementsByTagName("*");
+			for(i=0;i<aa.length;i++){
+				if(aa[i].className==_class){
+					a.push(aa[i]);
+				}
+			}
+			return a;
+		}
+		
+		console.log(document.childNodes[0]);
+//		for(var i=0;i<aLi.length;i++){
+//			aLi[i].style.background="red";		
+//		}
+	</script>
+</html>

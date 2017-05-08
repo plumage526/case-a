@@ -1,0 +1,188 @@
+<!--<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 300px;
+				width: 500px;
+				margin: 0 auto;
+				border: 1px solid;
+				border-radius: 10px;
+				border-color: salmon;
+				box-shadow: 2px 2px 2px 2px red;
+			}
+			span{
+				display: block;
+				float: left;
+				margin-left: 5px;
+				margin-bottom: 5px;
+				background: linear-gradient(to top,#fff, skyblue);
+				width: 150px;
+				height: 60px;
+				text-align: center;
+				line-height: 30px;
+				font-weight: 900;
+				color: royalblue;
+				border-radius: 10px;
+				box-shadow: 1px 1px 1px 1px;
+			}
+			.div1{
+				padding: 15px;
+				box-sizing: border-box;
+				background: linear-gradient(to top,#fff, pink);
+			}
+			.div2{
+				text-align: center;
+				font-size: 24px;
+				line-height: 60px;
+				color: orangered;
+				font-weight: 900;
+				margin-top: 10px;
+				font-family: "华文彩云";
+				opacity: 0.5;
+			}
+			span.active{
+				opacity: 0.5;
+				background: linear-gradient(to top,#fff, yellow);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div1">
+			<span class="active">1月<br/>JAN</span>
+			<span>2月<br/>FEB</span>
+			<span>3月<br/>MAR</span>
+			<span>4月<br/>APR</span>
+			<span>5月<br/>MAY</span>
+			<span>6月<br/>JUN</span>
+			<span>7月<br/>JUL</span>
+			<span>8月<br/>AUG</span>
+			<span>9月<br/>SEP</span>
+			<span>10月<br/>OCT</span>
+			<span>11月<br/>NOV</span>
+			<span>12月<br/>DEC</span>
+		</div>
+		<div class="div2" id="info">
+		
+		</div>
+	</body>
+	<script type="text/javascript">
+		var aSpan=document.getElementsByTagName("span");
+		var oDiv=document.getElementById("info");
+		var information=[
+			{"_color":"green","_text":"过年了各种玩，打dota，泡妹子1"},
+			{"_color":"red","_text":"过年了各种玩，打dota，泡妹子2"},
+			{"_color":"orange","_text":"过年了各种玩，打dota，泡妹子3"},
+			{"_color":"pink","_text":"过年了各种玩，打dota，泡妹子4"},
+			{"_color":"yellow","_text":"过年了各种玩，打dota，泡妹子5"},
+			{"_color":"tomato","_text":"过年了各种玩，打dota，泡妹子6"},
+			{"_color":"gray","_text":"过年了各种玩，打dota，泡妹子7"},
+			{"_color":"blue","_text":"过年了各种玩，打dota，泡妹子8"},
+			{"_color":"purple","_text":"过年了各种玩，打dota，泡妹子9"},
+			{"_color":"brown","_text":"过年了各种玩，打dota，泡妹子10"},
+			{"_color":"black","_text":"过年了各种玩，打dota，泡妹子11"},
+			{"_color":"sandybrown","_text":"过年了各种玩，打dota，泡妹子12"}
+		];
+		oDiv.style.backgroundColor=information[0]._color;
+		oDiv.innerHTML=1+"月计划："+information[0]._text;
+		for(var i=0;i<aSpan.length;i++){
+			aSpan[i].index=i;
+			aSpan[i].onmouseover=function(){
+				for(var j=0;j<aSpan.length;j++){
+					aSpan[j].className="";
+				}
+				this.className="active";
+				oDiv.innerHTML=this.index+1+"月计划："+information[this.index]._text;
+				oDiv.style.backgroundColor=information[this.index]._color;
+			}
+			
+		}
+	</script>
+</html>-->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>日历</title>
+	<style type="text/css">
+	#oDiv1{
+		width: 300px;
+		height: 300px;
+		background: seagreen;
+		border: 1px solid aquamarine;
+		text-align: center;
+		border-radius:30% ;
+	}
+		span{
+			margin: 20px 10px;
+			width: 50px;
+			height: 50px;
+			border-radius:20% ;
+			text-align: center;
+			line-height: 50px;
+			background: sandybrown;
+			float: left;
+		}
+		#oDiv2{
+			width: 300px;
+			height: 300px;
+			background: aquamarine;
+			border: 1px solid aqua;
+			border-radius:30% ;
+		}
+		.active{
+			background: aqua;
+		}
+	</style>
+</head>
+<body>
+	<div id="oDiv1">
+		<span class="active">1月</span>
+		<span>2月</span>
+		<span>3月</span>
+		<span>4月</span>
+		<span>5月</span>
+		<span>6月</span>
+		<span>7月</span>
+		<span>8月</span>
+		<span>9月</span>
+		<span>10月</span>
+		<span>11月</span>
+		<span>12月</span>
+		
+	</div>
+	<div id="oDiv2">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	var aSpan=document.getElementsByTagName("span");
+	var oDiv2=document.getElementById("oDiv2");
+	var shuzu=[
+	 {"color":"red","_text":"你好啊，小婊砸"}
+	 {"color":"red","_text":"你好啊，小婊砸"}
+	 {"color":"red","_text":"你好啊，小婊砸"}
+	 {"color":"red","_text":"你好啊，小婊砸"}
+	 {"color":"red","_text":"你好啊，小婊砸"}
+	 {"color":"red","_text":"你好啊，小婊砸"}
+	 {"color":"red","_text":"你好啊，小婊砸"}
+	 {"color":"red","_text":"你好啊，小婊砸"}
+	 {"color":"red","_text":"你好啊，小婊砸"}
+	 {"color":"red","_text":"你好啊，小婊砸"}
+	 {"color":"red","_text":"你好啊，小婊砸"}
+	 {"color":"red","_text":"你好啊，小婊砸"}
+	];
+	oDiv2.style.backgroundColor=shuzu[0].color;
+	oDiv2.innerHTML=1+"月计划"+shuzu[0]._text;
+	for(var i=0;i<aSpan.length;i++){
+		aSpan[i].index=i;
+		aSpan[i].onmouseover=function(){
+			aspan[i].style.display="blcok";
+			aSpan[i].className="active";
+		}
+	}
+	
+</script>
+</html>
